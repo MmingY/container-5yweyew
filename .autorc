@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "git-tag",
+    "all-contributors",
+    "first-time-contributor",
+    "released"
+  ],
+  "owner": "MmingY",
+  "repo": "container-5yweyew",
+  "name": "MmingY",
+  "email": "1379252510@qq.com",
+}
