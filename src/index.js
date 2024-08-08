@@ -1,4 +1,5 @@
 const express = require("express")
+const { createProxyMiddleware } = require('http-proxy-middleware'); 
 const app = express()
 const port = 5000
 
@@ -26,21 +27,37 @@ app.get("/health", (req, res) => {
     password: DB_PASSWORD,
   });
 
-	connection.query(
-		'SELECT NOW() AS now',
-		function (err, results, fields) {
-			if (err) {
+  connection.query(
+    'SELECT NOW() AS now',
+    function (err, results, fields) {
+      if (err) {
         console.error(err)
-				res.send(health)
-			} else {
-				console.log(results) // results contains rows returned by server
-				console.log(fields) // fields contains extra meta data about results, if available
-				health = "OK"
-				res.send(health)	
-			}
-		}
-	);
+        res.send(health)
+      } else {
+        console.log(results) // results contains rows returned by server
+        console.log(fields) // fields contains extra meta data about results, if available
+        health = "OK"
+        res.send(health)
+      }
+    }
+  );
 })
+
+// 配置代理中间件
+app.use('/github', createProxyMiddleware({
+  target: 'https://api.github.com',
+  changeOrigin: true,
+  pathRewrite: {
+    '^/github': '', // 去掉 '/github' 前缀
+  },
+  headers: {
+    'sec-ch-ua-platform': "Windows",
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'cross-site',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', // GitHub API 需要 User-Agent 头
+  },
+}));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
