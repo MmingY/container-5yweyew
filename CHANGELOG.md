@@ -1,3 +1,15 @@
+# v0.0.3 (Thu Jul 31 2025)
+
+#### ⚠️ Pushed to `main`
+
+- Merge remote-tracking branch 'origin/main' ([@MmingY](https://github.com/MmingY))
+
+#### Authors: 1
+
+- Ming ([@MmingY](https://github.com/MmingY))
+
+---
+
 # v0.0.2 (Thu Aug 08 2024)
 
 #### ⚠️ Pushed to `main`
