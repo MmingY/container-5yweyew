@@ -1,0 +1,8 @@
+# JWT配置
+JWT_SECRET=your_jwt_secret_here
+
+# Telegram配置
+TELEGRAM_BASE_URL=https://t.me/s
+
+# Telegram频道配置(0.3.0及之后版本无效)
+TELE_CHANNELS=[{"id":"xxxx","name":"xxxx资源分享"}]
