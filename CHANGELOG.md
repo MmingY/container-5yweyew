@@ -1,3 +1,15 @@
+# v0.0.4 (Fri Aug 01 2025)
+
+#### ⚠️ Pushed to `main`
+
+- 修改CloudSaver的yml文件 ([@MmingY](https://github.com/MmingY))
+
+#### Authors: 1
+
+- Ming ([@MmingY](https://github.com/MmingY))
+
+---
+
 # v0.0.3 (Thu Jul 31 2025)
 
 #### ⚠️ Pushed to `main`
