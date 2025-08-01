@@ -4,7 +4,7 @@ services:
     image: jiangrui1994/cloudsaver:latest
     container_name: cloud-saver2
     ports:
-      - "8008:8008"
+      - "5000:8008"
     volumes:
       - ./app/data:/app/data
       - ./app/config:/app/config
